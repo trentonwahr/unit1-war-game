@@ -4,7 +4,7 @@ let deck1 = []
 let deck2 = []
 let deck3 = []
 let deck4 = []
-let cardToRemove, turn, winner, player
+let cardToRemove1, cardToRemove2, turn, winner, player
 
 // Cached element references
 let deck1El = document.getElementById('deck-1')
@@ -48,29 +48,29 @@ function handleClick() {
         let randIdx = 0
         let cardPicked1 = deck1.splice(randIdx, 1)[0]
         deck2.push(cardPicked1)
-        render(cardPicked1)
+        render1(cardPicked1)
     }
     
     if (deck4.length > 0) {
       let moreRandIdx = 0
       let cardPicked2 = deck4.splice(moreRandIdx, 1)[0]
       deck3.push(cardPicked2)
-      render(cardPicked2)
+      render2(cardPicked2)
   }
   console.log(deck1)
-  // console.log(deck4)
+  console.log(deck4)
   console.log(deck2)
-  // console.log(deck3)
+  console.log(deck3)
 }
 
-function render(cardPicked1) {
+function render1(cardPicked1) {
   if (deck2.length === 1) {
       deck2El.classList.remove('outline')
   }
   if (deck2.length > 1) {
-      deck2El.classList.remove(cardToRemove)
+      deck2El.classList.remove(cardToRemove1)
   }
-  cardToRemove = cardPicked1
+  cardToRemove1 = cardPicked1
 
   deck2El.classList.add(cardPicked1)
 
@@ -84,24 +84,26 @@ function render(cardPicked1) {
   }
 }
 
-// if (deck3.length === 1) {
-//   deck3El.classList.remove('outline')
-// }
-// if (deck3.length > 1) {
-//     deck3El.classList.remove(cardToRemove)
-// }
-// cardToRemove = cardPicked2
+function render2(cardPicked2) {
+if (deck3.length === 1) {
+  deck3El.classList.remove('outline')
+}
+if (deck3.length > 1) {
+    deck3El.classList.remove(cardToRemove2)
+}
+cardToRemove2 = cardPicked2
 
-// deck3El.classList.add(cardPicked2)
+deck3El.classList.add(cardPicked2)
 
-// if (deck3.length === 13) {
-//     deck3El.classList.add('shadow')
-//     deck4El.classList.remove('shadow')
-// }
-// if (deck4.length === 0) {
-//     deck4El.classList.add('outline')
-//     deck4El.classList.remove('back-red')
-// }
+if (deck3.length === 13) {
+    deck3El.classList.add('shadow')
+    deck4El.classList.remove('shadow')
+}
+if (deck4.length === 0) {
+    deck4El.classList.add('outline')
+    deck4El.classList.remove('back-red')
+}
+}
 
 function switchPlayerTurn() {
   if (winner === true) {
