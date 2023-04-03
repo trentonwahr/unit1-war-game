@@ -40,34 +40,73 @@ function randDeck() {
   deck1 = deckFull.slice(0,26)
   deck4 = deckFull.slice(26,52)
 }
-console.log(deck1)
+// console.log(deck1)
+// console.log(deck4)
 
 function handleClick() {
     if (deck1.length > 0) {
         let randIdx = 0
-        let cardPicked = deck1.splice(randIdx, 1)[0]
-        deck2.push(cardPicked)
-        render(cardPicked)
+        let cardPicked1 = deck1.splice(randIdx, 1)[0]
+        deck2.push(cardPicked1)
+        render(cardPicked1)
     }
+    
+    if (deck4.length > 0) {
+      let moreRandIdx = 0
+      let cardPicked2 = deck4.splice(moreRandIdx, 1)[0]
+      deck3.push(cardPicked2)
+      render(cardPicked2)
+  }
+  console.log(deck1)
+  // console.log(deck4)
+  console.log(deck2)
+  // console.log(deck3)
 }
 
-function render(cardPicked) {
-    if (deck2.length === 1) {
-        deck2El.classList.remove('outline')
-    }
-    if (deck2.length > 1) {
-        deck2El.classList.remove(cardToRemove)
-    }
-    cardToRemove = cardPicked
+function render(cardPicked1) {
+  if (deck2.length === 1) {
+      deck2El.classList.remove('outline')
+  }
+  if (deck2.length > 1) {
+      deck2El.classList.remove(cardToRemove)
+  }
+  cardToRemove = cardPicked1
 
-    deck2El.classList.add(cardPicked)
+  deck2El.classList.add(cardPicked1)
 
-    if (deck2.length === 26) {
-        deck2El.classList.add('shadow')
-        deck1El.classList.remove('shadow')
-    }
-    if (deck1.length === 0) {
-        deck1El.classList.add('outline')
-        deck1El.classList.remove('back-red')
-    }
+  if (deck2.length === 13) {
+      deck2El.classList.add('shadow')
+      deck1El.classList.remove('shadow')
+  }
+  if (deck1.length === 0) {
+      deck1El.classList.add('outline')
+      deck1El.classList.remove('back-red')
+  }
+}
+
+// if (deck3.length === 1) {
+//   deck3El.classList.remove('outline')
+// }
+// if (deck3.length > 1) {
+//     deck3El.classList.remove(cardToRemove)
+// }
+// cardToRemove = cardPicked2
+
+// deck3El.classList.add(cardPicked2)
+
+// if (deck3.length === 13) {
+//     deck3El.classList.add('shadow')
+//     deck4El.classList.remove('shadow')
+// }
+// if (deck4.length === 0) {
+//     deck4El.classList.add('outline')
+//     deck4El.classList.remove('back-red')
+// }
+
+function switchPlayerTurn() {
+  if (winner === true) {
+    return
+  } else if (winner === false) {
+    turn *= -1
+  }
 }
