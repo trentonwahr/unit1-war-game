@@ -105,10 +105,14 @@ if (deck4.length === 0) {
 }
 }
 
-function switchPlayerTurn() {
-  if (winner === true) {
-    return
-  } else if (winner === false) {
-    turn *= -1
-  }
+function compare() {
+  
 }
+
+// function switchPlayerTurn() {
+//   if (winner === true) {
+//     return
+//   } else if (winner === false) {
+//     turn *= -1
+//   }
+// }
