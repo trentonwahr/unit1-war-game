@@ -14,7 +14,7 @@ let deck4El = document.getElementById('deck-4')
 
 
 // Event listeners
-document.getElementById('btn').addEventListener('click', handleClick)
+document.getElementById('flipbtn').addEventListener('click', handleClick)
 
 // Functions
 
@@ -106,7 +106,7 @@ if (deck4.length === 0) {
 }
 
 function compare() {
-  
+
 }
 
 // function switchPlayerTurn() {
