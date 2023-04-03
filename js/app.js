@@ -57,10 +57,10 @@ function handleClick() {
       deck3.push(cardPicked2)
       render2(cardPicked2)
   }
-  console.log(deck1)
-  console.log(deck4)
-  console.log(deck2)
-  console.log(deck3)
+  // console.log(deck1)
+  // console.log(deck4)
+  // console.log(deck2)
+  // console.log(deck3)
 }
 
 function render1(cardPicked1) {
