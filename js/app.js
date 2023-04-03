@@ -60,10 +60,10 @@ function handleClick() {
       render2(cardPicked2)
   }
   compare()
-  // console.log(deck1)
-  // console.log(deck4)
-  // console.log(deck2)
-  // console.log(deck3)
+  console.log(deck1)
+  console.log(deck4)
+  console.log(deck2)
+  console.log(deck3)
 }
 
 function render1(cardPicked1) {
@@ -110,8 +110,16 @@ if (deck4.length === 0) {
 
 function compare() {
   if (parseInt(deck2[0].slice(-2)) > parseInt(deck3[0].slice(-2))) {
-    console.log('yay')
+    let idx = 0
+    cardWon1 = deck2.splice(idx, 1)[0]
+    cardWon2= deck3.splice(idx, 1)[0]
+    deck1.push(cardWon1)
+    deck1.push(cardWon2)
   } else if (parseInt(deck3[0].slice(-2)) > parseInt(deck2[0].slice(-2))) {
-    console.log('boo')
+    let idx = 0
+    cardWon1 = deck2.splice(idx, 1)[0]
+    cardWon2= deck3.splice(idx,1)[0]
+    deck4.push(cardWon1)
+    deck4.push(cardWon2)
   }
 }
