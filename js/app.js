@@ -140,15 +140,15 @@ function compare() {
 
 function war() {
   if (deck1.length > 0) {
-    let idx = 0
-    let cardPickedWar1 = deck1.splice(idx, 1)[0]
+    let warIdx = 0
+    let cardPickedWar1 = deck1.splice(warIdx, 1)[0]
     warDeck1.push(cardPickedWar1)
     render3(cardPickedWar1)
 }
 
 if (deck4.length > 0) {
-  let idx = 0
-  let cardPickedWar2 = deck4.splice(idx, 1)[0]
+  let war2Idx = 0
+  let cardPickedWar2 = deck4.splice(war2Idx, 1)[0]
   warDeck2.push(cardPickedWar2)
   render4(cardPickedWar2)
 }
