@@ -4,6 +4,10 @@ let deck1 = []
 let deck2 = []
 let deck3 = []
 let deck4 = []
+let warDeck1 = []
+let warDeck2 = []
+let doubWar1 = []
+let doubWar2 = []
 let cardToRemove1, cardToRemove2, turn, winner, player
 
 
