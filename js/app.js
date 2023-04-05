@@ -26,6 +26,7 @@ let deckDoubWar2El = document.getElementById('deck-war-d2')
 document.getElementById('flipbtn').addEventListener('click', handleClick)
 document.getElementById('resetbtn').addEventListener('click', init)
 document.getElementById('compbtn').addEventListener('click', handleComp)
+document.getElementById('warbtn').addEventListener('click', handleWar)
 
 // Functions
 
@@ -141,6 +142,9 @@ function compare() {
 
 function handleComp() {
   compare()
+}
+
+function handleWar() {
   warCompare()
 }
 
@@ -165,7 +169,6 @@ function war() {
     // render4(cardPickedWar2)
   }
 
-  warCompare()
 }
 
 function warCompare() {
