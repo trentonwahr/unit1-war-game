@@ -6,8 +6,8 @@ let deck3 = []
 let deck4 = []
 let warDeck1 = []
 let warDeck2 = []
-let doubWar1 = []
-let doubWar2 = []
+let doubDeck1 = []
+let doubDeck2 = []
 let cardToRemove1, cardToRemove2, turn, winner, player
 
 
@@ -218,7 +218,7 @@ doubleWar() {
   if (deck1.length > 0) {
     let idx = 0
     let cardPickedDoub1 = deck1.splice(idx, 1)[0]
-    doubWar1.push(cardPickedDoub1)
+    doubDeck1.push(cardPickedDoub1)
     deckDoubWar1El.classList.add('card')
     deckDoubWar1El.classList.add(cardPickedDoub1)
   }
@@ -226,12 +226,66 @@ doubleWar() {
   if (deck4.length > 0) {
     let idx = 0
     let cardPickedDoub2 = deck4.splice(idx, 1)[0]
-    doubWar2.push(cardPickedDoub2)
+    doubDeck2.push(cardPickedDoub2)
     deckDoubWar2El.classList.add('card')
     deckDoubWar2El.classList.add(cardPickedDoub2)
   }
 }
 
 function doubWarCompare() {
-
+  if (parseInt(doubDeck1[0].slice(-2)) > parseInt(doubDeck2[0].slice(-2))) {
+    let idx = 0
+    cardWonDoub1 = deck2.splice(idx, 1)[0]
+    cardWonDoub2= deck3.splice(idx, 1)[0]
+    cardWonDoub3= warDeck1.splice(idx, 1)[0]
+    cardWonDoub4= warDeck2.splice(idx, 1)[0]
+    cardWonDoub5= doubDeck1.splice(idx, 1)[0]
+    cardWonDoub6= doubDeck2.splice(idx, 1)[0]
+    deck1.push(cardWonDoub1)
+    deck1.push(cardWonDoub2)
+    deck1.push(cardWonDoub3)
+    deck1.push(cardWonDoub4)
+    deck1.push(cardWonDoub5)
+    deck1.push(cardWonDoub6)
+    deck2El.classList.remove(cardWonDoub1)
+    deck3El.classList.remove(cardWonDoub2)
+    deckWar1El.classList.remove(cardWonDoub3)
+    deckWar2El.classList.remove(cardWonDoub4)
+    deckDoubWar1El.classList.remove(cardWonDoub5)
+    deckDoubWar2El.classList.remove(cardWonDoub6)
+    deckWar1El.classList.remove('card')
+    deckWar2El.classList.remove('card')
+    deckDoubWar1El.classList.remove('card')
+    deckDoubWar2El.classList.remove('card')
+    deck2El.classList.add('outline')
+    deck3El.classList.add('outline')
+  } else if (parseInt(doubDeck1[0].slice(-2)) < parseInt(doubDeck2[0].slice(-2))) {
+    let idx = 0
+    cardWonDoub1 = deck2.splice(idx, 1)[0]
+    cardWonDoub2= deck3.splice(idx, 1)[0]
+    cardWonDoub3= warDeck1.splice(idx, 1)[0]
+    cardWonDoub4= warDeck2.splice(idx, 1)[0]
+    cardWonDoub5= doubDeck1.splice(idx, 1)[0]
+    cardWonDoub6= doubDeck2.splice(idx, 1)[0]
+    deck4.push(cardWonDoub1)
+    deck4.push(cardWonDoub2)
+    deck4.push(cardWonDoub3)
+    deck4.push(cardWonDoub4)
+    deck4.push(cardWonDoub5)
+    deck4.push(cardWonDoub6)
+    deck2El.classList.remove(cardWonDoub1)
+    deck3El.classList.remove(cardWonDoub2)
+    deckWar1El.classList.remove(cardWonDoub3)
+    deckWar2El.classList.remove(cardWonDoub4)
+    deckDoubWar1El.classList.remove(cardWonDoub5)
+    deckDoubWar2El.classList.remove(cardWonDoub6)
+    deckWar1El.classList.remove('card')
+    deckWar2El.classList.remove('card')
+    deckDoubWar1El.classList.remove('card')
+    deckDoubWar2El.classList.remove('card')
+    deck2El.classList.add('outline')
+    deck3El.classList.add('outline')
+  } else if (parseInt(doubDeck1[0].slice(-2)) === parseInt(doubDeck2[0].slice(-2))) {
+    
+  }
 }
