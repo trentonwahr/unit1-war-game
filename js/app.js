@@ -152,6 +152,8 @@ function war() {
     let idx = 0
     let cardPickedWar1 = deck1.splice(idx, 1)[0]
     warDeck1.push(cardPickedWar1)
+    deckWar1El.classList.add('card')
+    deckWar1El.classList.add('large')
     deckWar1El.classList.add(cardPickedWar1)
     // render3(cardPickedWar1)
   }
@@ -160,6 +162,8 @@ function war() {
     let idx = 0
     let cardPickedWar2 = deck4.splice(idx, 1)[0]
     warDeck2.push(cardPickedWar2)
+    deckWar2El.classList.add('card')
+    deckWar2El.classList.add('large')
     deckWar2El.classList.add(cardPickedWar2)
     // render4(cardPickedWar2)
   }
