@@ -26,9 +26,6 @@ const messageEl = document.getElementById('message')
 // Event listeners
 document.getElementById('playbtn').addEventListener('click', handleClick)
 document.getElementById('resetbtn').addEventListener('click', init)
-// document.getElementById('compbtn').addEventListener('click', handleComp)
-// document.getElementById('warbtn').addEventListener('click', handleWar)
-// document.getElementById('doubwarbtn').addEventListener('click', handleDoubWar)
 
 // Functions
 
@@ -71,7 +68,13 @@ function resetGame() {
 }
 
 function updateMessage() {
-  if (deck1.length > 0 && deck4.length >0) {
+  if (doubDeck1.length === 1) {
+    messageEl.textContent = `It's Double War`
+  } else if (warDeck1.length === 1) {
+    messageEl.textContent = `It's War`
+  } else if (deck2.length === 1) {
+    messageEl.textContent = `Let's see who wins.`
+  } else if (deck2.length === 0) {
     messageEl.textContent = `Let's Play War!`
   } else if (deck4.length === 0) {
     messageEl.textContent = `Player 1 Wins`
@@ -96,10 +99,13 @@ function randDeck() {
 function handleClick() {
   if (doubDeck1.length === 1) {
     handleDoubWar()
+    messageEl.textContent = `It's Double War`
   } else if (warDeck1.length === 1) {
     handleWar()
+    messageEl.textContent = `It's War`
   } else if (deck2.length === 1) {
     handleComp()
+    messageEl.textContent = `Let's see who wins.`
   } else if (deck2.length === 0) {
     handlePlay()
   }
