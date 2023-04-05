@@ -169,7 +169,6 @@ function war() {
     deckWar2El.classList.add('card')
     deckWar2El.classList.add(cardPickedWar2)
   }
-
 }
 
 function warCompare() {
