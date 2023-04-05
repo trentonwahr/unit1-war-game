@@ -8,7 +8,7 @@ let warDeck1 = []
 let warDeck2 = []
 let doubDeck1 = []
 let doubDeck2 = []
-let cardToRemove1, cardToRemove2, turn, winner, player
+let cardToRemove1, cardToRemove2, turn, winner
 
 
 // Cached element references
@@ -213,7 +213,7 @@ function warCompare() {
   }
 }
 
-doubleWar() {
+function doubleWar() {
   if (deck1.length > 0) {
     let idx = 0
     let cardPickedDoub1 = deck1.splice(idx, 1)[0]
