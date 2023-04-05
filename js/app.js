@@ -24,11 +24,11 @@ const messageEl = document.getElementById('message')
 
 
 // Event listeners
-document.getElementById('flipbtn').addEventListener('click', handleClick)
+document.getElementById('playbtn').addEventListener('click', handleClick)
 document.getElementById('resetbtn').addEventListener('click', init)
-document.getElementById('compbtn').addEventListener('click', handleComp)
-document.getElementById('warbtn').addEventListener('click', handleWar)
-document.getElementById('doubwarbtn').addEventListener('click', handleDoubWar)
+// document.getElementById('compbtn').addEventListener('click', handleComp)
+// document.getElementById('warbtn').addEventListener('click', handleWar)
+// document.getElementById('doubwarbtn').addEventListener('click', handleDoubWar)
 
 // Functions
 
@@ -37,7 +37,7 @@ init()
 function init() {
   turn = 1
   winner = false
-  shuffDeck(deckFull)
+  // shuffDeck(deckFull)
   randDeck()
   resetGame()
 }
@@ -80,13 +80,13 @@ function updateMessage() {
   }
 }
 
-function shuffDeck(arr) {
-  for (let i = arr.length - 1; i>=0; i--) {
-    const idx = Math.floor(Math.random()*(i+1))
-    arr.push(arr[idx])
-    arr.splice(idx, 1)
-  }
-}
+// function shuffDeck(arr) {
+//   for (let i = arr.length - 1; i>=0; i--) {
+//     const idx = Math.floor(Math.random()*(i+1))
+//     arr.push(arr[idx])
+//     arr.splice(idx, 1)
+//   }
+// }
 
 function randDeck() {
   deck1 = deckFull.slice(0,26)
@@ -94,6 +94,19 @@ function randDeck() {
 }
 
 function handleClick() {
+  if (deck2.length === 0) {
+    handlePlay()
+  } else if (deck2.length === 1) {
+    handleComp()
+  } else if (warDeck1.length === 1) {
+    handleWar()
+  } else if (doubDeck1.length === 1) {
+    handleDoubWar()
+  }
+  updateMessage()
+}
+
+function handlePlay() {
   if (deck1.length > 0) {
     let randIdx = 0
     let cardPicked1 = deck1.splice(randIdx, 1)[0]
