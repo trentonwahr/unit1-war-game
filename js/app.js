@@ -120,8 +120,6 @@ function compare() {
     cardWon2= deck3.splice(idx, 1)[0]
     deck1.push(cardWon1)
     deck1.push(cardWon2)
-    let winCard1 = deck2.splice(idx, 1)[0]
-    let winCard2 = deck3.splice(idx, 1)[0]
     deck2El.classList.remove(cardWon1)
     deck3El.classList.remove(cardWon2)
     deck2El.classList.add('outline')
@@ -132,8 +130,6 @@ function compare() {
     cardWon2= deck3.splice(idx,1)[0]
     deck4.push(cardWon1)
     deck4.push(cardWon2)
-    let winCard1 = deck2.splice(idx, 1)[0]
-    let winCard2 = deck3.splice(idx, 1)[0]
     deck2El.classList.remove(cardWon1)
     deck3El.classList.remove(cardWon2)
     deck2El.classList.add('outline')
@@ -145,6 +141,7 @@ function compare() {
 
 function handleComp() {
   compare()
+  warCompare()
 }
 
 function war() {
@@ -167,46 +164,46 @@ function war() {
     deckWar2El.classList.add(cardPickedWar2)
     // render4(cardPickedWar2)
   }
+
+  warCompare()
 }
 
-// function render3(cardPickedWar1) {
-//   if (warDeck1.length === 1) {
-//     deckWar1El.classList.remove('outline')
-//   }
-//   if (warDeck1.length > 1) {
-//       deckWar1El.classList.remove(cardToRemoveWar1)
-//   }
-//   cardToRemoveWar1 = cardPickedWar1
-
-//   deckWar1El.classList.add(cardPickedWar1)
-
-//   if (warDeck1.length === 13) {
-//       deckWar1El.classList.add('shadow')
-//       deck1El.classList.remove('shadow')
-//   }
-//   if (deck1.length === 0) {
-//       deck1El.classList.add('outline')
-//       deck1El.classList.remove('back-red')
-//   }
-// }
-
-// function render4(cardPickedWar2) {
-//   if (warDeck2.length === 1) {
-//     deckWar2El.classList.remove('outline')
-//   }
-//   if (warDeck2.length > 1) {
-//       deckWar2El.classList.remove(cardToRemoveWar2)
-//   }
-//   cardToRemoveWar2 = cardPickedWar2
-  
-//   deckWar2El.classList.add(cardPickedWar2)
-  
-//   if (warDeck2.length === 13) {
-//       deckWar2El.classList.add('shadow')
-//       deck4El.classList.remove('shadow')
-//   }
-//   if (deck4.length === 0) {
-//       deck4El.classList.add('outline')
-//       deck4El.classList.remove('back-red')
-//   }
-// }
+function warCompare() {
+  if (parseInt(warDeck1[0].slice(-2)) > parseInt(warDeck2[0].slice(-2))) {
+    let idx = 0
+    cardWonWar1 = deck2.splice(idx, 1)[0]
+    cardWonWar2= deck3.splice(idx, 1)[0]
+    cardWonWar3= warDeck1.splice(idx, 1)[0]
+    cardWonWar4= warDeck2.splice(idx, 1)[0]
+    deck1.push(cardWonWar1)
+    deck1.push(cardWonWar2)
+    deck1.push(cardWonWar3)
+    deck1.push(cardWonWar4)
+    deck2El.classList.remove(cardWonWar1)
+    deck3El.classList.remove(cardWonWar2)
+    deckWar1El.classList.remove(cardWonWar3)
+    deckWar2El.classList.remove(cardWonWar4)
+    deckWar1El.classList.remove('card')
+    deckWar2El.classList.remove('card')
+    deck2El.classList.add('outline')
+    deck3El.classList.add('outline')
+  } else if (parseInt(warDeck1[0].slice(-2)) < parseInt(warDeck2[0].slice(-2))) {
+    let idx = 0
+    cardWonWar1 = deck2.splice(idx, 1)[0]
+    cardWonWar2= deck3.splice(idx, 1)[0]
+    cardWonWar3= warDeck1.splice(idx, 1)[0]
+    cardWonWar4= warDeck2.splice(idx, 1)[0]
+    deck4.push(cardWonWar1)
+    deck4.push(cardWonWar2)
+    deck4.push(cardWonWar3)
+    deck4.push(cardWonWar4)
+    deck2El.classList.remove(cardWonWar1)
+    deck3El.classList.remove(cardWonWar2)
+    deckWar1El.classList.remove(cardWonWar3)
+    deckWar2El.classList.remove(cardWonWar4)
+    deckWar1El.classList.remove('card')
+    deckWar2El.classList.remove('card')
+    deck2El.classList.add('outline')
+    deck3El.classList.add('outline')
+  }
+}
