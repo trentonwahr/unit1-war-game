@@ -109,14 +109,14 @@ function handleClick() {
   }
   updateMessage()
 
-  console.log(deck1)
-  console.log(deck4)
-  console.log(deck2)
-  console.log(deck3)
-  console.log(warDeck1)
-  console.log(warDeck2)
-  console.log(doubDeck1)
-  console.log(doubDeck2)
+  console.log(deck1, 'deck 1')
+  console.log(deck4, 'deck 4')
+  console.log(deck2, 'deck 2')
+  console.log(deck3, 'deck 3')
+  console.log(warDeck1, 'war deck 1')
+  console.log(warDeck2, 'war deck 2')
+  console.log(doubDeck1, 'doubDeck 1')
+  console.log(doubDeck2, 'doubDeck 2')
 }
 
 function render1(cardPicked1) {
