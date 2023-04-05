@@ -32,10 +32,10 @@ init()
 
 
 function init() {
-    turn = 1
-    winner = false
-    shuffDeck(deckFull)
-    randDeck()
+  turn = 1
+  winner = false
+  shuffDeck(deckFull)
+  randDeck()
 }
 
 function shuffDeck(arr) {
@@ -54,18 +54,18 @@ function randDeck() {
 // console.log(deck4)
 
 function handleClick() {
-    if (deck1.length > 0) {
-        let randIdx = 0
-        let cardPicked1 = deck1.splice(randIdx, 1)[0]
-        deck2.push(cardPicked1)
-        render1(cardPicked1)
-    }
+  if (deck1.length > 0) {
+    let randIdx = 0
+    let cardPicked1 = deck1.splice(randIdx, 1)[0]
+    deck2.push(cardPicked1)
+    render1(cardPicked1)
+  }
     
-    if (deck4.length > 0) {
-      let moreRandIdx = 0
-      let cardPicked2 = deck4.splice(moreRandIdx, 1)[0]
-      deck3.push(cardPicked2)
-      render2(cardPicked2)
+  if (deck4.length > 0) {
+    let moreRandIdx = 0
+    let cardPicked2 = deck4.splice(moreRandIdx, 1)[0]
+    deck3.push(cardPicked2)
+    render2(cardPicked2)
   }
   compare()
   console.log(deck1)
@@ -144,43 +144,35 @@ function war() {
     let cardPickedWar1 = deck1.splice(warIdx, 1)[0]
     warDeck1.push(cardPickedWar1)
     render3(cardPickedWar1)
-}
+  }
 
-if (deck4.length > 0) {
-  let war2Idx = 0
-  let cardPickedWar2 = deck4.splice(war2Idx, 1)[0]
-  warDeck2.push(cardPickedWar2)
-  render4(cardPickedWar2)
-}
-console.log(deck1)
-console.log(deck4)
-console.log(deck2)
-console.log(deck3)
-console.log(warDeck1)
-console.log(warDeck2)
-console.log(doubWar1)
-console.log(doubWar2)
+  if (deck4.length > 0) {
+    let war2Idx = 0
+    let cardPickedWar2 = deck4.splice(war2Idx, 1)[0]
+    warDeck2.push(cardPickedWar2)
+    render4(cardPickedWar2)
+  }
 }
 
 function render3(cardPickedWar1) {
   if (warDeck1.length === 1) {
     deckWar1El.classList.remove('outline')
-}
-if (warDeck1.length > 1) {
-    deckWar1El.classList.remove(cardToRemoveWar1)
-}
-cardToRemoveWar1 = cardPickedWar1
+  }
+  if (warDeck1.length > 1) {
+      deckWar1El.classList.remove(cardToRemoveWar1)
+  }
+  cardToRemoveWar1 = cardPickedWar1
 
-deckWar1El.classList.add(cardPickedWar1)
+  deckWar1El.classList.add(cardPickedWar1)
 
-if (warDeck1.length === 13) {
-    deckWar1El.classList.add('shadow')
-    deck1El.classList.remove('shadow')
-}
-if (deck1.length === 0) {
-    deck1El.classList.add('outline')
-    deck1El.classList.remove('back-red')
-}
+  if (warDeck1.length === 13) {
+      deckWar1El.classList.add('shadow')
+      deck1El.classList.remove('shadow')
+  }
+  if (deck1.length === 0) {
+      deck1El.classList.add('outline')
+      deck1El.classList.remove('back-red')
+  }
 }
 
 function render4(cardPickedWar2) {
