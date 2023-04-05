@@ -37,7 +37,7 @@ init()
 function init() {
   turn = 1
   winner = false
-  // shuffDeck(deckFull)
+  shuffDeck(deckFull)
   randDeck()
   resetGame()
 }
@@ -80,13 +80,13 @@ function updateMessage() {
   }
 }
 
-// function shuffDeck(arr) {
-//   for (let i = arr.length - 1; i>=0; i--) {
-//     const idx = Math.floor(Math.random()*(i+1))
-//     arr.push(arr[idx])
-//     arr.splice(idx, 1)
-//   }
-// }
+function shuffDeck(arr) {
+  for (let i = arr.length - 1; i>=0; i--) {
+    const idx = Math.floor(Math.random()*(i+1))
+    arr.push(arr[idx])
+    arr.splice(idx, 1)
+  }
+}
 
 function randDeck() {
   deck1 = deckFull.slice(0,26)
@@ -94,16 +94,25 @@ function randDeck() {
 }
 
 function handleClick() {
-  if (deck2.length === 0) {
-    handlePlay()
-  } else if (deck2.length === 1) {
-    handleComp()
+  if (doubDeck1.length === 1) {
+    handleDoubWar()
   } else if (warDeck1.length === 1) {
     handleWar()
-  } else if (doubDeck1.length === 1) {
-    handleDoubWar()
+  } else if (deck2.length === 1) {
+    handleComp()
+  } else if (deck2.length === 0) {
+    handlePlay()
   }
   updateMessage()
+
+  console.log(deck1, 'deck 1')
+  console.log(deck4, 'deck 4')
+  console.log(deck2, 'deck 2')
+  console.log(deck3, 'deck 3')
+  console.log(warDeck1, 'war deck 1')
+  console.log(warDeck2, 'war deck 2')
+  console.log(doubDeck1, 'doubDeck 1')
+  console.log(doubDeck2, 'doubDeck 2')
 }
 
 function handlePlay() {
@@ -120,16 +129,6 @@ function handlePlay() {
     deck3.push(cardPicked2)
     render2(cardPicked2)
   }
-  updateMessage()
-
-  console.log(deck1, 'deck 1')
-  console.log(deck4, 'deck 4')
-  console.log(deck2, 'deck 2')
-  console.log(deck3, 'deck 3')
-  console.log(warDeck1, 'war deck 1')
-  console.log(warDeck2, 'war deck 2')
-  console.log(doubDeck1, 'doubDeck 1')
-  console.log(doubDeck2, 'doubDeck 2')
 }
 
 function render1(cardPicked1) {
