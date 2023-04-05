@@ -20,6 +20,7 @@ let deckWar1El = document.getElementById('deck-war-1')
 let deckWar2El = document.getElementById('deck-war-2')
 let deckDoubWar1El = document.getElementById('deck-war-d1')
 let deckDoubWar2El = document.getElementById('deck-war-d2')
+const messageEl = document.getElementById('message')
 
 
 // Event listeners
@@ -33,12 +34,50 @@ document.getElementById('doubwarbtn').addEventListener('click', handleDoubWar)
 
 init()
 
-
 function init() {
   turn = 1
   winner = false
   shuffDeck(deckFull)
   randDeck()
+  resetGame()
+}
+
+function resetGame() {
+  let idx = 0
+  cardWonDoub1 = deck2.splice(idx, 1)[0]
+  cardWonDoub2= deck3.splice(idx, 1)[0]
+  cardWonDoub3= warDeck1.splice(idx, 1)[0]
+  cardWonDoub4= warDeck2.splice(idx, 1)[0]
+  cardWonDoub5= doubDeck1.splice(idx, 1)[0]
+  cardWonDoub6= doubDeck2.splice(idx, 1)[0]
+  deck2El.classList.remove(cardWonDoub1)
+  deck3El.classList.remove(cardWonDoub2)
+  deckWar1El.classList.remove(cardWonDoub3)
+  deckWar2El.classList.remove(cardWonDoub4)
+  deckDoubWar1El.classList.remove(cardWonDoub5)
+  deckDoubWar2El.classList.remove(cardWonDoub6)
+  deckWar1El.classList.remove('card')
+  deckWar2El.classList.remove('card')
+  deckDoubWar1El.classList.remove('card')
+  deckDoubWar2El.classList.remove('card')
+  deck2El.classList.add('outline')
+  deck3El.classList.add('outline')
+  deck2 = []
+  deck3 = []
+  warDeck1 = []
+  warDeck2 = []
+  doubDeck1 = []
+  doubDeck2 = []
+}
+
+function updateMessage() {
+  if (deck1.length > 0 && deck4.length >0) {
+    messageEl.textContent = `Let's Play War!`
+  } else if (deck4.length === 0) {
+    messageEl.textContent = `Player 1 Wins`
+  } else if (deck1.length === 0) {
+    messageEl.textContent = `Player 2 Wins`
+  }
 }
 
 function shuffDeck(arr) {
@@ -54,7 +93,6 @@ function randDeck() {
   deck4 = deckFull.slice(26,52)
 }
 
-
 function handleClick() {
   if (deck1.length > 0) {
     let randIdx = 0
@@ -69,6 +107,8 @@ function handleClick() {
     deck3.push(cardPicked2)
     render2(cardPicked2)
   }
+  updateMessage()
+
   console.log(deck1)
   console.log(deck4)
   console.log(deck2)
