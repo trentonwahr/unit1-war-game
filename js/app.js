@@ -27,7 +27,7 @@ document.getElementById('flipbtn').addEventListener('click', handleClick)
 document.getElementById('resetbtn').addEventListener('click', init)
 document.getElementById('compbtn').addEventListener('click', handleComp)
 document.getElementById('warbtn').addEventListener('click', handleWar)
-// document.getElementById('doubwarbtn').addEventListener('click', handleDoubWar)
+document.getElementById('doubwarbtn').addEventListener('click', handleDoubWar)
 
 // Functions
 
@@ -53,8 +53,7 @@ function randDeck() {
   deck1 = deckFull.slice(0,26)
   deck4 = deckFull.slice(26,52)
 }
-// console.log(deck1)
-// console.log(deck4)
+
 
 function handleClick() {
   if (deck1.length > 0) {
@@ -70,15 +69,14 @@ function handleClick() {
     deck3.push(cardPicked2)
     render2(cardPicked2)
   }
-  // compare()
   console.log(deck1)
   console.log(deck4)
   console.log(deck2)
   console.log(deck3)
   console.log(warDeck1)
   console.log(warDeck2)
-  console.log(doubWar1)
-  console.log(doubWar2)
+  console.log(doubDeck1)
+  console.log(doubDeck2)
 }
 
 function render1(cardPicked1) {
@@ -285,6 +283,7 @@ function doubWarCompare() {
     deck2El.classList.add('outline')
     deck3El.classList.add('outline')
   } else if (parseInt(doubDeck1[0].slice(-2)) === parseInt(doubDeck2[0].slice(-2))) {
+    let idx = 0
     cardWonDoub1 = deck2.splice(idx, 1)[0]
     cardWonDoub2= deck3.splice(idx, 1)[0]
     cardWonDoub3= warDeck1.splice(idx, 1)[0]
