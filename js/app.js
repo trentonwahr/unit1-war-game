@@ -127,71 +127,74 @@ function compare() {
     cardWon2= deck3.splice(idx, 1)[0]
     deck1.push(cardWon1)
     deck1.push(cardWon2)
+    console.log('player wins')
   } else if (parseInt(deck3[0].slice(-2)) > parseInt(deck2[0].slice(-2))) {
     let idx = 0
     cardWon1 = deck2.splice(idx, 1)[0]
     cardWon2= deck3.splice(idx,1)[0]
     deck4.push(cardWon1)
     deck4.push(cardWon2)
+    console.log('com wins')
   } else if (parseInt(deck2[0].slice(-2)) === parseInt(deck3[0].slice(-2))) {
-    war()
+    // war()
+    console.log('its war')
   }
 }
 
-function war() {
-  if (deck1.length > 0) {
-    let warIdx = 0
-    let cardPickedWar1 = deck1.splice(warIdx, 1)[0]
-    warDeck1.push(cardPickedWar1)
-    render3(cardPickedWar1)
-  }
+// function war() {
+//   if (deck1.length > 0) {
+//     let warIdx = 0
+//     let cardPickedWar1 = deck1.splice(warIdx, 1)[0]
+//     warDeck1.push(cardPickedWar1)
+//     render3(cardPickedWar1)
+//   }
 
-  if (deck4.length > 0) {
-    let war2Idx = 0
-    let cardPickedWar2 = deck4.splice(war2Idx, 1)[0]
-    warDeck2.push(cardPickedWar2)
-    render4(cardPickedWar2)
-  }
-}
+//   if (deck4.length > 0) {
+//     let war2Idx = 0
+//     let cardPickedWar2 = deck4.splice(war2Idx, 1)[0]
+//     warDeck2.push(cardPickedWar2)
+//     render4(cardPickedWar2)
+//   }
+// }
 
-function render3(cardPickedWar1) {
-  if (warDeck1.length === 1) {
-    deckWar1El.classList.remove('outline')
-  }
-  if (warDeck1.length > 1) {
-      deckWar1El.classList.remove(cardToRemoveWar1)
-  }
-  cardToRemoveWar1 = cardPickedWar1
+// function render3(cardPickedWar1) {
+//   if (warDeck1.length === 1) {
+//     deckWar1El.classList.remove('outline')
+//   }
+//   if (warDeck1.length > 1) {
+//       deckWar1El.classList.remove(cardToRemoveWar1)
+//   }
+//   cardToRemoveWar1 = cardPickedWar1
 
-  deckWar1El.classList.add(cardPickedWar1)
+//   deckWar1El.classList.add(cardPickedWar1)
 
-  if (warDeck1.length === 13) {
-      deckWar1El.classList.add('shadow')
-      deck1El.classList.remove('shadow')
-  }
-  if (deck1.length === 0) {
-      deck1El.classList.add('outline')
-      deck1El.classList.remove('back-red')
-  }
-}
+//   if (warDeck1.length === 13) {
+//       deckWar1El.classList.add('shadow')
+//       deck1El.classList.remove('shadow')
+//   }
+//   if (deck1.length === 0) {
+//       deck1El.classList.add('outline')
+//       deck1El.classList.remove('back-red')
+//   }
+// }
 
-function render4(cardPickedWar2) {
-  if (warDeck2.length === 1) {
-    deckWar2El.classList.remove('outline')
-  }
-  if (warDeck2.length > 1) {
-      deckWar2El.classList.remove(cardToRemoveWar2)
-  }
-  cardToRemoveWar2 = cardPickedWar2
+// function render4(cardPickedWar2) {
+//   if (warDeck2.length === 1) {
+//     deckWar2El.classList.remove('outline')
+//   }
+//   if (warDeck2.length > 1) {
+//       deckWar2El.classList.remove(cardToRemoveWar2)
+//   }
+//   cardToRemoveWar2 = cardPickedWar2
   
-  deckWar2El.classList.add(cardPickedWar2)
+//   deckWar2El.classList.add(cardPickedWar2)
   
-  if (warDeck2.length === 13) {
-      deckWar2El.classList.add('shadow')
-      deck4El.classList.remove('shadow')
-  }
-  if (deck4.length === 0) {
-      deck4El.classList.add('outline')
-      deck4El.classList.remove('back-red')
-  }
-}
+//   if (warDeck2.length === 13) {
+//       deckWar2El.classList.add('shadow')
+//       deck4El.classList.remove('shadow')
+//   }
+//   if (deck4.length === 0) {
+//       deck4El.classList.add('outline')
+//       deck4El.classList.remove('back-red')
+//   }
+// }
