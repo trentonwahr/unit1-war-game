@@ -25,6 +25,7 @@ let deckDoubWar2El = document.getElementById('deck-war-d2')
 // Event listeners
 document.getElementById('flipbtn').addEventListener('click', handleClick)
 document.getElementById('resetbtn').addEventListener('click', init)
+document.getElementById('compbtn').addEventListener('click', handleComp)
 
 // Functions
 
@@ -67,7 +68,7 @@ function handleClick() {
     deck3.push(cardPicked2)
     render2(cardPicked2)
   }
-  compare()
+  // compare()
   console.log(deck1)
   console.log(deck4)
   console.log(deck2)
@@ -89,10 +90,6 @@ function render1(cardPicked1) {
 
   deck2El.classList.add(cardPicked1)
 
-  if (deck2.length === 13) {
-      deck2El.classList.add('shadow')
-      deck1El.classList.remove('shadow')
-  }
   if (deck1.length === 0) {
       deck1El.classList.add('outline')
       deck1El.classList.remove('back-red')
@@ -110,10 +107,6 @@ function render2(cardPicked2) {
 
   deck3El.classList.add(cardPicked2)
 
-  if (deck3.length === 13) {
-      deck3El.classList.add('shadow')
-      deck4El.classList.remove('shadow')
-  }
   if (deck4.length === 0) {
       deck4El.classList.add('outline')
       deck4El.classList.remove('back-red')
@@ -127,35 +120,50 @@ function compare() {
     cardWon2= deck3.splice(idx, 1)[0]
     deck1.push(cardWon1)
     deck1.push(cardWon2)
-    console.log('player wins')
+    let winCard1 = deck2.splice(idx, 1)[0]
+    let winCard2 = deck3.splice(idx, 1)[0]
+    deck2El.classList.remove(cardWon1)
+    deck3El.classList.remove(cardWon2)
+    deck2El.classList.add('outline')
+    deck3El.classList.add('outline')
   } else if (parseInt(deck3[0].slice(-2)) > parseInt(deck2[0].slice(-2))) {
     let idx = 0
     cardWon1 = deck2.splice(idx, 1)[0]
     cardWon2= deck3.splice(idx,1)[0]
     deck4.push(cardWon1)
     deck4.push(cardWon2)
-    console.log('com wins')
+    let winCard1 = deck2.splice(idx, 1)[0]
+    let winCard2 = deck3.splice(idx, 1)[0]
+    deck2El.classList.remove(cardWon1)
+    deck3El.classList.remove(cardWon2)
+    deck2El.classList.add('outline')
+    deck3El.classList.add('outline')
   } else if (parseInt(deck2[0].slice(-2)) === parseInt(deck3[0].slice(-2))) {
-    // war()
-    console.log('its war')
+    war()
   }
 }
 
-// function war() {
-//   if (deck1.length > 0) {
-//     let warIdx = 0
-//     let cardPickedWar1 = deck1.splice(warIdx, 1)[0]
-//     warDeck1.push(cardPickedWar1)
-//     render3(cardPickedWar1)
-//   }
+function handleComp() {
+  compare()
+}
 
-//   if (deck4.length > 0) {
-//     let war2Idx = 0
-//     let cardPickedWar2 = deck4.splice(war2Idx, 1)[0]
-//     warDeck2.push(cardPickedWar2)
-//     render4(cardPickedWar2)
-//   }
-// }
+function war() {
+  if (deck1.length > 0) {
+    let idx = 0
+    let cardPickedWar1 = deck1.splice(idx, 1)[0]
+    warDeck1.push(cardPickedWar1)
+    deckWar1El.classList.add(cardPickedWar1)
+    // render3(cardPickedWar1)
+  }
+
+  if (deck4.length > 0) {
+    let idx = 0
+    let cardPickedWar2 = deck4.splice(idx, 1)[0]
+    warDeck2.push(cardPickedWar2)
+    deckWar2El.classList.add(cardPickedWar2)
+    // render4(cardPickedWar2)
+  }
+}
 
 // function render3(cardPickedWar1) {
 //   if (warDeck1.length === 1) {
