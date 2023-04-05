@@ -27,6 +27,7 @@ document.getElementById('flipbtn').addEventListener('click', handleClick)
 document.getElementById('resetbtn').addEventListener('click', init)
 document.getElementById('compbtn').addEventListener('click', handleComp)
 document.getElementById('warbtn').addEventListener('click', handleWar)
+// document.getElementById('doubwarbtn').addEventListener('click', handleDoubWar)
 
 // Functions
 
@@ -148,15 +149,17 @@ function handleWar() {
   warCompare()
 }
 
+function handleDoubWar() {
+  doubWarCompare()
+}
+
 function war() {
   if (deck1.length > 0) {
     let idx = 0
     let cardPickedWar1 = deck1.splice(idx, 1)[0]
     warDeck1.push(cardPickedWar1)
     deckWar1El.classList.add('card')
-    deckWar1El.classList.add('large')
     deckWar1El.classList.add(cardPickedWar1)
-    // render3(cardPickedWar1)
   }
 
   if (deck4.length > 0) {
@@ -164,9 +167,7 @@ function war() {
     let cardPickedWar2 = deck4.splice(idx, 1)[0]
     warDeck2.push(cardPickedWar2)
     deckWar2El.classList.add('card')
-    deckWar2El.classList.add('large')
     deckWar2El.classList.add(cardPickedWar2)
-    // render4(cardPickedWar2)
   }
 
 }
@@ -208,5 +209,29 @@ function warCompare() {
     deckWar2El.classList.remove('card')
     deck2El.classList.add('outline')
     deck3El.classList.add('outline')
+  } else if (parseInt(warDeck1[0].slice(-2)) === parseInt(warDeck2[0].slice(-2))) {
+    doubleWar()
   }
+}
+
+doubleWar() {
+  if (deck1.length > 0) {
+    let idx = 0
+    let cardPickedDoub1 = deck1.splice(idx, 1)[0]
+    doubWar1.push(cardPickedDoub1)
+    deckDoubWar1El.classList.add('card')
+    deckDoubWar1El.classList.add(cardPickedDoub1)
+  }
+
+  if (deck4.length > 0) {
+    let idx = 0
+    let cardPickedDoub2 = deck4.splice(idx, 1)[0]
+    doubWar2.push(cardPickedDoub2)
+    deckDoubWar2El.classList.add('card')
+    deckDoubWar2El.classList.add(cardPickedDoub2)
+  }
+}
+
+function doubWarCompare() {
+
 }
