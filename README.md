@@ -1,5 +1,5 @@
 # War
-![Game screenshot](https://github.com/trentonwahr/war-game/blob/main/images/war-screenshot.png)
+![Game screenshot](https://github.com/trentonwahr/war-game/blob/main/images/war-screenshot2.png)
 
 
 This is my take on the classic card game of War! Here a standard deck of 52 cards will be shuffled and evenly distributed to both sides. The player will be able to flip a card from each deck and then compare them to see who has the higher card, and remember Aces are high. Whichever deck had the better card gets to keep both cards played. If the value of the cards are equal a "war" starts. In a "war" scenario both decks flip another card and those two are then compared to each other with the winner taking all. If the value of the cards are equal again a "double war" starts. A "double war" scenario is the same as regular "war" but if the cards are equal again it's deemed a draw and all cards returned to their original deck. The game is won when either deck runs out of cards.
