@@ -132,6 +132,8 @@ function handleClick() {
   } else if (deck2.length === 0) {
     handlePlay()
   }
+
+  renderMain()
   updateMessage()
   updateCount()
 }
@@ -152,20 +154,31 @@ function handlePlay() {
   }
 }
 
+function renderMain() {
+  if (deck4.length > 0) {
+    deck4El.classList.add('back-red')
+    deck4El.classList.remove('outline')
+  }
+  if (deck1.length > 0) {
+    deck1El.classList.add('back-red')
+    deck1El.classList.remove('outline')
+  }
+}
+
 function render1(cardPicked1) {
   if (deck2.length === 1) {
-      deck2El.classList.remove('outline')
+    deck2El.classList.remove('outline')
   }
   if (deck2.length > 1) {
-      deck2El.classList.remove(cardToRemove1)
+    deck2El.classList.remove(cardToRemove1)
   }
   cardToRemove1 = cardPicked1
 
   deck2El.classList.add(cardPicked1)
 
   if (deck1.length === 0) {
-      deck1El.classList.add('outline')
-      deck1El.classList.remove('back-red')
+    deck1El.classList.add('outline')
+    deck1El.classList.remove('back-red')
   }
 }
 
@@ -181,8 +194,8 @@ function render2(cardPicked2) {
   deck3El.classList.add(cardPicked2)
 
   if (deck4.length === 0) {
-      deck4El.classList.add('outline')
-      deck4El.classList.remove('back-red')
+    deck4El.classList.add('outline')
+    deck4El.classList.remove('back-red')
   }
 }
 
