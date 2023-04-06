@@ -11,6 +11,7 @@ I've gone with a western themed to the game to give the feeling of playing cards
 - Netlify
 # Attributions
 - GA-provided CSS Card Deck. [Find it here.](https://github.com/SEI-Remote/css-card-deck)
+- Favicon by buqancreative (Image #25180332 at VectorStock.com)
 # What's next!
 - I'm planning on adding the ability to have the second deck be controlled by a computer player.
 - Animations.
