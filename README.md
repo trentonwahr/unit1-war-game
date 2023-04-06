@@ -3,6 +3,7 @@ This is my take on the classic card game of War! Here a standard deck of 52 card
 
 I've gone with a western themed to the game to give the feeling of playing cards in a saloon.
 # Play the game here!
+https://war-twahr.netlify.app/
 # Technologies used
 - CSS
 - JavaScript
