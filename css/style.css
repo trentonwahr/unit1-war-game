@@ -11,6 +11,7 @@ h1{
   align-items: center;
   justify-content: center;
   background-color: rgb(167, 45, 45);
+  margin: 36px 0px 48px 0px;
 }
 
 h2{
@@ -18,6 +19,7 @@ h2{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0px 0px 24px 0px;
 }
 
 .container {
@@ -36,7 +38,7 @@ h2{
 }
 
 .card.outline {
-  border: 0.15em dashed tan;
+  border: 0.15em dashed rgb(192, 37, 37);
 }
 
 .card.shadow {
