@@ -21,6 +21,8 @@ let deckWar2El = document.getElementById('deck-war-2')
 let deckDoubWar1El = document.getElementById('deck-war-d1')
 let deckDoubWar2El = document.getElementById('deck-war-d2')
 const messageEl = document.getElementById('message')
+const deck1CountEl = document.getElementById('deck-1-count')
+const deck2CountEl = document.getElementById('deck-2-count')
 
 
 // Event listeners
@@ -36,6 +38,7 @@ function init() {
   winner = false
   shuffDeck(deckFull)
   randDeck()
+  updateCount()
   resetGame()
 }
 
@@ -65,6 +68,11 @@ function resetGame() {
   warDeck2 = []
   doubDeck1 = []
   doubDeck2 = []
+}
+
+function updateCount() {
+  deck1CountEl.textContent = deck1.length
+  deck2CountEl.textContent = deck4.length
 }
 
 function updateMessage() {
@@ -110,6 +118,7 @@ function handleClick() {
     handlePlay()
   }
   updateMessage()
+  updateCount()
 
   console.log(deck1, 'deck 1')
   console.log(deck4, 'deck 4')
