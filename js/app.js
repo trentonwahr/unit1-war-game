@@ -1,5 +1,7 @@
-// Declare deck variables
+//---------------- Declare deck variables -----------------------------------//
+
 let deckFull = ["d14","d12","d13","d11","d10","d09","d08","d07","d06","d05","d04","d03","d02","h14","h12","h13","h11","h10","h09","h08","h07","h06","h05","h04","h03","h02","c14","c12","c13","c11","c10","c09","c08","c07","c06","c05","c04","c03","c02","s14","s12","s13","s11","s10","s09","s08","s07","s06","s05","s04","s03","s02"]
+let testDeck = ["d14","d12","d13","d11","d10","d09","d08","d07","d06","d05","d04","d03","d02"]
 let deck1 = []
 let deck2 = []
 let deck3 = []
@@ -8,10 +10,11 @@ let warDeck1 = []
 let warDeck2 = []
 let doubDeck1 = []
 let doubDeck2 = []
-let cardToRemove1, cardToRemove2, turn, winner
+let cardToRemove1, cardToRemove2, winner
 
 
-// Cached element references
+//-------------- Cached element references ----------------------------------//
+
 let deck1El = document.getElementById('deck-1')
 let deck2El = document.getElementById('deck-2')
 let deck3El = document.getElementById('deck-3')
@@ -25,19 +28,20 @@ const deck1CountEl = document.getElementById('deck-1-count')
 const deck2CountEl = document.getElementById('deck-2-count')
 
 
-// Event listeners
+//------------------------ Event listeners ---------------------------------//
+
 document.getElementById('playbtn').addEventListener('click', handleClick)
 document.getElementById('resetbtn').addEventListener('click', init)
 
-// Functions
+//-------------------------- Functions -------------------------------------//
 
 init()
 
 function init() {
-  turn = 1
   winner = false
-  shuffDeck(deckFull)
-  randDeck()
+  shuffDeck(testDeck)
+  // randDeck()
+  testing()
   updateCount()
   resetGame()
 }
@@ -62,6 +66,10 @@ function resetGame() {
   deckDoubWar2El.classList.remove('card')
   deck2El.classList.add('outline')
   deck3El.classList.add('outline')
+  deck1El.classList.add('back-red')
+  deck1El.classList.remove('outline')
+  deck4El.classList.add('back-red')
+  deck4El.classList.remove('outline')
   deck2 = []
   deck3 = []
   warDeck1 = []
@@ -82,8 +90,8 @@ function updateMessage() {
     messageEl.textContent = `It's War`
   } else if (deck2.length === 1) {
     messageEl.textContent = `Let's see who wins.`
-  } else if (deck2.length === 0) {
-    messageEl.textContent = `Let's Play War!`
+  // } else if (deck2.length === 0) {
+  //   messageEl.textContent = `Let's Play War!`
   } else if (deck4.length === 0) {
     messageEl.textContent = `Player 1 Wins`
   } else if (deck1.length === 0) {
@@ -99,9 +107,14 @@ function shuffDeck(arr) {
   }
 }
 
-function randDeck() {
-  deck1 = deckFull.slice(0,26)
-  deck4 = deckFull.slice(26,52)
+// function randDeck() {
+//   deck1 = deckFull.slice(0,26)
+//   deck4 = deckFull.slice(26,52)
+// }
+
+function testing(){
+  deck1 = testDeck.slice(0,7)
+  deck4 = testDeck.slice(7,13)
 }
 
 function handleClick() {
@@ -119,15 +132,6 @@ function handleClick() {
   }
   updateMessage()
   updateCount()
-
-  console.log(deck1, 'deck 1')
-  console.log(deck4, 'deck 4')
-  console.log(deck2, 'deck 2')
-  console.log(deck3, 'deck 3')
-  console.log(warDeck1, 'war deck 1')
-  console.log(warDeck2, 'war deck 2')
-  console.log(doubDeck1, 'doubDeck 1')
-  console.log(doubDeck2, 'doubDeck 2')
 }
 
 function handlePlay() {
