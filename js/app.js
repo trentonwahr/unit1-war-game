@@ -90,12 +90,12 @@ function updateMessage() {
     messageEl.textContent = `It's War`
   } else if (deck2.length === 1) {
     messageEl.textContent = `Let's see who wins.`
-  // } else if (deck2.length === 0) {
-  //   messageEl.textContent = `Let's Play War!`
   } else if (deck4.length === 0) {
     messageEl.textContent = `Player 1 Wins`
   } else if (deck1.length === 0) {
     messageEl.textContent = `Player 2 Wins`
+  } else if (deck2.length === 0) {
+    messageEl.textContent = `Let's Play War!`
   }
 }
 
@@ -127,6 +127,8 @@ function handleClick() {
   } else if (deck2.length === 1) {
     handleComp()
     messageEl.textContent = `Let's see who wins.`
+  } else if (deck1.length === 0 || deck4.length === 0) {
+    return
   } else if (deck2.length === 0) {
     handlePlay()
   }
