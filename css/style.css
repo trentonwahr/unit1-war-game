@@ -2,6 +2,7 @@ body {
   background-color: #3f1414;
   height: 40vmax;
   color: tan;
+  font-family: 'Rye', cursive;
 }
 
 h1{
@@ -23,6 +24,10 @@ h2{
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border: 8px solid tan;
+  background-color: rgb(11, 91, 11);
+  margin: 20px;
+  padding: 25px;
 }
 
 .card {
@@ -57,7 +62,9 @@ h2 {
   width: 175px;
   margin: 20px;
   border: 3px solid tan;
+  background-color: rgb(225, 218, 204);
   font-size: 40px;
+  font-family: 'Rye', cursive;
 }
 
 #playbtn:hover {
@@ -70,7 +77,9 @@ h2 {
   height: 50px;
   width: 120px;
   border: 3px solid tan;
+  background-color: rgb(225, 218, 204);
   font-size: 15px;
+  font-family: 'Rye', cursive;
 }
 
 #resetbtn:hover {
@@ -84,6 +93,7 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 25px;
+  margin: 0px 80px 0px 80px
 }

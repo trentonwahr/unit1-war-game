@@ -39,9 +39,9 @@ init()
 
 function init() {
   winner = false
-  shuffDeck(testDeck)
-  // randDeck()
-  testing()
+  shuffDeck(deckFull)
+  randDeck()
+  // testing()
   updateCount()
   resetGame()
 }
@@ -76,18 +76,19 @@ function resetGame() {
   warDeck2 = []
   doubDeck1 = []
   doubDeck2 = []
+  messageEl.textContent = `Let's Play War!`
 }
 
 function updateCount() {
-  deck1CountEl.textContent = deck1.length
-  deck2CountEl.textContent = deck4.length
+  deck1CountEl.textContent = `Deck Count:${deck1.length}`
+  deck2CountEl.textContent = `Deck Count:${deck4.length}`
 }
 
 function updateMessage() {
   if (doubDeck1.length === 1) {
-    messageEl.textContent = `It's Double War`
+    messageEl.textContent = `Uh-oh! It's Double War!`
   } else if (warDeck1.length === 1) {
-    messageEl.textContent = `It's War`
+    messageEl.textContent = `It's War!`
   } else if (deck2.length === 1) {
     messageEl.textContent = `Let's see who wins.`
   } else if (deck4.length === 0) {
@@ -95,7 +96,7 @@ function updateMessage() {
   } else if (deck1.length === 0) {
     messageEl.textContent = `Player 2 Wins`
   } else if (deck2.length === 0) {
-    messageEl.textContent = `Let's Play War!`
+    messageEl.textContent = `Draw Again!`
   }
 }
 
@@ -107,15 +108,15 @@ function shuffDeck(arr) {
   }
 }
 
-// function randDeck() {
-//   deck1 = deckFull.slice(0,26)
-//   deck4 = deckFull.slice(26,52)
-// }
-
-function testing(){
-  deck1 = testDeck.slice(0,7)
-  deck4 = testDeck.slice(7,13)
+function randDeck() {
+  deck1 = deckFull.slice(0,26)
+  deck4 = deckFull.slice(26,52)
 }
+
+// function testing(){
+//   deck1 = testDeck.slice(0,7)
+//   deck4 = testDeck.slice(7,13)
+// }
 
 function handleClick() {
   if (doubDeck1.length === 1) {
