@@ -67,9 +67,9 @@ function resetGame() {
   deckDoubWar2El.classList.remove('card')
   deck2El.classList.add('outline')
   deck3El.classList.add('outline')
-  deck1El.classList.add('back-red')
+  deck1El.classList.add('back-western')
   deck1El.classList.remove('outline')
-  deck4El.classList.add('back-red')
+  deck4El.classList.add('back-western')
   deck4El.classList.remove('outline')
   deck2 = []
   deck3 = []
@@ -158,11 +158,11 @@ function handlePlay() {
 
 function renderMain() {
   if (deck4.length > 0) {
-    deck4El.classList.add('back-red')
+    deck4El.classList.add('back-western')
     deck4El.classList.remove('outline')
   }
   if (deck1.length > 0) {
-    deck1El.classList.add('back-red')
+    deck1El.classList.add('back-western')
     deck1El.classList.remove('outline')
   }
 }
@@ -180,7 +180,7 @@ function render1(cardPicked1) {
 
   if (deck1.length === 0) {
     deck1El.classList.add('outline')
-    deck1El.classList.remove('back-red')
+    deck1El.classList.remove('back-western')
   }
 }
 
@@ -197,7 +197,7 @@ function render2(cardPicked2) {
 
   if (deck4.length === 0) {
     deck4El.classList.add('outline')
-    deck4El.classList.remove('back-red')
+    deck4El.classList.remove('back-western')
   }
 }
 

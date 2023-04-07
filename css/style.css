@@ -40,7 +40,7 @@ h2{
 }
 
 .card.outline {
-  border: 0.15em dashed rgb(192, 37, 37);
+  border: 0.15em dashed tan;
 }
 
 .card.shadow {

@@ -319,6 +319,9 @@
 .card.back-red {
   background-image: url("../images/backs/red.svg"); }
 
+.card.back-western {
+  background-image: url("../images/backs/Cowboy.jpeg");
+}
 /* Re-orients the cards for different directions. While
    they are symmetric, it's still important to orient
    them correctly in case text or other symbols are
