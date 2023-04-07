@@ -40,6 +40,7 @@ init()
 function init() {
   winner = false
   shuffDeck(deckFull)
+  // shuffDeck(testDeck)
   randDeck()
   // testing()
   updateCount()
@@ -80,8 +81,8 @@ function resetGame() {
 }
 
 function updateCount() {
-  deck1CountEl.textContent = `Deck Count:${deck1.length}`
-  deck2CountEl.textContent = `Deck Count:${deck4.length}`
+  deck1CountEl.textContent = `Sheriff's Deck:${deck1.length}`
+  deck2CountEl.textContent = `Cowboy's Deck:${deck4.length}`
 }
 
 function updateMessage() {
@@ -92,9 +93,9 @@ function updateMessage() {
   } else if (deck2.length === 1) {
     messageEl.textContent = `Let's see who wins.`
   } else if (deck4.length === 0) {
-    messageEl.textContent = `Player 1 Wins`
+    messageEl.textContent = `The Sheriff Wins.`
   } else if (deck1.length === 0) {
-    messageEl.textContent = `Player 2 Wins`
+    messageEl.textContent = `The Cowboy Wins.`
   } else if (deck2.length === 0) {
     messageEl.textContent = `Draw Again!`
   }
