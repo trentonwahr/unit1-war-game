@@ -20,3 +20,5 @@ I've gone with a western themed to the game to give the feeling of playing cards
 - Sound effects.
 - Animations.
 - Different game modes.
+# Planning materials
+[Here](https://docs.google.com/document/d/1AwzRQWcbaWlxdEkhSOctYi0kRlScxK0zJQyHr9HsSPg/edit?usp=sharing)
